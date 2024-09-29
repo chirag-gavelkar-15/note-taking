@@ -56,14 +56,16 @@ const NoteItemList = () => {
 
    
       {filteredNotes.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6">
           {currentNotes.map((note) => (
             <div
               key={note.id}
               className="p-6  bg-blue-50 rounded-lg shadow-md hover:shadow-xl transition duration-300"
             >
              <h2 className="text-xl font-semibold text-gray-900 mb-2">{note.title}</h2>
-            <p className="text-gray-700">{note.content}</p>
+             <p className="text-gray-700 overflow-hidden text-ellipsis max-h-24">
+  {note.content}
+</p>
                     <p className="text-sm text-gray-500 mt-4">Category: {note.category}</p>
 
               <div className="mt-4 flex justify-between items-center">
